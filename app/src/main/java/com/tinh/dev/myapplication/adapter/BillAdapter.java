@@ -59,12 +59,7 @@ public class BillAdapter extends RecyclerView.Adapter<HolderBill> {
         getBilldetailsArrayList1 = new ArrayList<>();
         billdetailsDAO=new BilldetailsDAO(helper);
         final Bill bill = bills.get(position);
-
-
-
-
-
-            SimpleDateFormat simpleDateFormat = new SimpleDateFormat("dd/MM/yyyy");
+        SimpleDateFormat simpleDateFormat = new SimpleDateFormat("dd/MM/yyyy");
             holder.txtID.setText(bill.getMaHoaDon());
             //String date= new Date(simpleDateFormat.format(bill.getNgayMua())).toString();
             holder.txtDATE.setText(simpleDateFormat.format(bill.getNgayMua()) + "");
