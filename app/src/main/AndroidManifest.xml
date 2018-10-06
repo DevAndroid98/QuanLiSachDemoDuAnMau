@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.tinh.dev.myapplication">
+
+    <!-- To auto-complete the email text field in the login form with the user's emails -->
+    <uses-permission android:name="android.permission.GET_ACCOUNTS" />
+    <uses-permission android:name="android.permission.READ_PROFILE" />
+    <uses-permission android:name="android.permission.READ_CONTACTS" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <activity
+            android:name=".SplashScreenActivity"
+            android:theme="@style/SplashTheme">
+
+        </activity>
+        <activity
+            android:name=".LoginActivity"
+            android:label="@string/title_activity_login"
+            android:theme="@style/AppThemeStyle2" />
+        <activity
+            android:name=".HomeActivity"
+            android:label="Home"
+            android:theme="@style/AppThemeStyle3">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".UserActivity"
+            android:label="Người dùng"
+            android:parentActivityName=".HomeActivity"
+            android:theme="@style/NguoiDung_Activity"></activity>
+        <activity
+            android:name=".GenreActivity"
+            android:label="Quản lí loại sách"
+            android:parentActivityName=".HomeActivity"
+            android:theme="@style/NguoiDung_Activity" />
+        <activity
+            android:name=".BookActivity"
+            android:label="Quản lí sách"
+            android:parentActivityName=".HomeActivity"
+            android:theme="@style/NguoiDung_Activity" />
+        <activity
+            android:name=".BookSale"
+            android:label="Top 10 sách bán chạy"
+            android:theme="@style/NguoiDung_Activity" />
+        <activity
+            android:name=".StatisticActivity"
+            android:label="Thống kê"
+            android:theme="@style/NguoiDung_Activity" />
+        <activity
+            android:name=".BillActivity"
+            android:label="Hóa đơn"
+            android:parentActivityName=".HomeActivity"
+            android:theme="@style/NguoiDung_Activity" />
+        <activity android:name=".BilldetailActivity"
+            android:parentActivityName=".BillActivity"
+            android:theme="@style/NguoiDung_Activity">
+
+        </activity>
+    </application>
+
+</manifest>
