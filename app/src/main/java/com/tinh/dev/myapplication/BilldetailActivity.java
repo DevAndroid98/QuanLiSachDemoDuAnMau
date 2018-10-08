@@ -30,6 +30,7 @@ import static com.tinh.dev.myapplication.Constant.B_COLUMN_IDBOOK;
 import static com.tinh.dev.myapplication.Constant.B_COLUMN_POS;
 import static com.tinh.dev.myapplication.Constant.COLUMN_GIABIA;
 import static com.tinh.dev.myapplication.Constant.COLUMN_MASACH;
+import static com.tinh.dev.myapplication.Constant.COLUMN_SOLUONG;
 
 public class BilldetailActivity extends AppCompatActivity {
     private EditText edtIDBill;
@@ -172,17 +173,20 @@ public class BilldetailActivity extends AppCompatActivity {
     private void getIDBook(){
         final ArrayList<String> strings=new ArrayList<>();
         final ArrayList<Float> floats=new ArrayList<>();
+        final ArrayList<Integer> ints=new ArrayList<>();
         Cursor cursor=helper.getData("SELECT * FROM Sach");
         if (cursor!=null && cursor.moveToNext()){
             do {
                 String masach=cursor.getString(cursor.getColumnIndex(COLUMN_MASACH));
                 float giabia=cursor.getFloat(cursor.getColumnIndex(COLUMN_GIABIA));
+                int soluong=cursor.getInt(cursor.getColumnIndex(COLUMN_SOLUONG));
                 Book book=new Book();
                 book.setMaSach(masach);
                 book.setGiaBia(giabia);
                 bookArrayList.add(book);
                 strings.add(masach);
                 floats.add(giabia);
+                ints.add(soluong);
                }while (cursor.moveToNext());
             }
         final ArrayAdapter adapter=new ArrayAdapter(this,android.R.layout.simple_spinner_item,strings);
@@ -199,7 +203,10 @@ public class BilldetailActivity extends AppCompatActivity {
                             txtSoLuong.setError(getString(R.string.error_PassWord));
                             return;
                         }
-
+                        if (ints.get(position)<Integer.parseInt(txtSoLuong.getText().toString().trim())){
+                            txtSoLuong.setError(getString(R.string.error_po));
+                            return;
+                        }
 
                         Billdetails billdetails1=new Billdetails();
                         billdetails1.setIdbook(strings.get(position));
