@@ -46,5 +46,6 @@
     <string name="errorlengmaxseven">Tối đa 7 kí tự</string>
     <string name="error_date">Vui lòng chọn ngày</string>
     <string name="error_po">Không đủ số lượng</string>
+    <string name="error_pos">Tối đa 5 kí tự</string>
 
 </resources>

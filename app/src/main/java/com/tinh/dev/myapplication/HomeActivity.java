@@ -29,7 +29,6 @@ public class HomeActivity extends AppCompatActivity implements OnNavigationItemS
     private ActionBarDrawerToggle toggle;
     private Toolbar toolbar;
 
-
     private LinearLayout layoutND;
     private LinearLayout layoutQLS;
     private LinearLayout layoutSBC;
