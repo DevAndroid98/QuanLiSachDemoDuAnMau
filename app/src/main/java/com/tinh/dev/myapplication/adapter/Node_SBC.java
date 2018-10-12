@@ -33,9 +33,13 @@ public class Node_SBC extends RecyclerView.Adapter<HolderUser> {
     @Override
     public void onBindViewHolder(@NonNull HolderUser holder, int position) {
         Booksale nguoiDung=arrayList.get(position);
-//        holder.txtChinh.setText("Mã sách:"+nguoiDung.getMaSach());
-//        holder.txtPhu.setText("Số lượng"+nguoiDung.getSL()+"");
-        holder.imgView.setImageResource(nguoiDung.getAnh());
+       holder.txtUsername.setText("Mã sách:"+nguoiDung.getMaSach());
+       holder.txtPhone.setText("Số lượng"+nguoiDung.getSL()+"");
+       holder.imgEdit.setVisibility(View.GONE);
+       holder.imgDelete.setVisibility(View.GONE);
+       holder.imgView.setImageResource(R.drawable.money_icon);
+
+
     }
 
     @Override

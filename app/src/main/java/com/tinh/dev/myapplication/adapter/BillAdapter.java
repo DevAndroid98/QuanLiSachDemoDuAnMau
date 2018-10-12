@@ -85,7 +85,8 @@ public class BillAdapter extends RecyclerView.Adapter<HolderBill> {
                         } while (cursor.moveToNext());
                         for (int i = 0; i < billdetailsArrayList.size(); i++) {
                             if (billdetailsArrayList.get(i).getIdbill().equals(bill.getMaHoaDon())) {
-                                billdetailsDAO.delete(String.valueOf(i));
+                                billdetailsDAO.delete1(billdetailsArrayList.get(i).getIdbill());
+                                Log.e("i",i+"");
 
                             }
                         }

@@ -43,18 +43,27 @@ public class BilldetailAdapter extends RecyclerView.Adapter<HolderBilldetail> {
              final Billdetails bill=billdetails.get(position);
              int pos=-1;
         for (int i = 0; i < billdetails .size(); i++){
-            Book book=bookArrayList.get(i);
-            if (book.getMaSach().equalsIgnoreCase(bill.getIdbook())){
-                pos = i;
-                break;
+            if (!bookArrayList.isEmpty()){
+                Book book=bookArrayList.get(i);
+                if (book.getMaSach().equalsIgnoreCase(bill.getIdbook())){
+                    pos = i;
+                    break;
+                }
+            }
+            else {
+                holder.txtSoLuong.setText("Số lượng:?");
+                holder.txtMaSach.setText("Mã sách:Không tồn tại");
+                holder.txtGiaBia.setText("Giá bìa:?");
+                holder.txtYhanhTien.setText("Thành tiền:?");
+                return;
             }
         }
 
-             Book book=bookArrayList.get(pos);
-             holder.txtSoLuong.setText("Số lượng:"+bill.getSoluong());
-             holder.txtMaSach.setText("Mã sách:"+bill.getIdbook());
-             holder.txtGiaBia.setText("Giá bìa:"+book.getGiaBia()+"\tVND");
-             holder.txtYhanhTien.setText("Thành tiền:"+bill.getSoluong()*book.getGiaBia()+"\tVND");
+        Book book=bookArrayList.get(pos);
+        holder.txtSoLuong.setText("Số lượng:"+bill.getSoluong());
+        holder.txtMaSach.setText("Mã sách:"+bill.getIdbook());
+        holder.txtGiaBia.setText("Giá bìa:"+book.getGiaBia()+"\tVND");
+        holder.txtYhanhTien.setText("Thành tiền:"+bill.getSoluong()*book.getGiaBia()+"\tVND");
 
            holder.imageView.setOnClickListener(new View.OnClickListener() {
                @Override

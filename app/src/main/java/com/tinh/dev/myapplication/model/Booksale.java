@@ -4,7 +4,7 @@ public class Booksale {
 
     private String MaSach;
     private int SL;
-    private int Anh;
+
 
     public String getMaSach() {
         return MaSach;
@@ -22,18 +22,14 @@ public class Booksale {
         this.SL = SL;
     }
 
-    public int getAnh() {
-        return Anh;
-    }
 
-    public void setAnh(int anh) {
-        Anh = anh;
-    }
 
-    public Booksale(String maSach, int SL, int anh) {
+
+
+    public Booksale(String maSach, int SL) {
 
         MaSach = maSach;
         this.SL = SL;
-        Anh = anh;
+
     }
 }

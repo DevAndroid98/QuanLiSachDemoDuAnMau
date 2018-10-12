@@ -106,7 +106,6 @@ public class GenreActivity extends AppCompatActivity {
             public void onClick(DialogInterface dialog, int which) {
                 typeBookDAO.deleteTypeBook(maloai);
                 typeBookArrayList.remove(i);
-                Toast.makeText(GenreActivity.this, ""+i, Toast.LENGTH_SHORT).show();
                 anhXa();
                 addRecyclerview();
 

@@ -174,7 +174,7 @@ public class BookActivity extends AppCompatActivity {
                             Book book = bookArrayList.get(i);
 
                             if (masach.equals(book.getMaSach())) {
-                                edtMaSach.setError("Mã hóa đơn đã tồn tại");
+                                edtMaSach.setError("Mã sách đã tồn tại");
                                 test = true;
                                 break;
                             }
@@ -250,7 +250,6 @@ public class BookActivity extends AppCompatActivity {
             public void onClick(DialogInterface dialog, int which) {
                 bookDao.deleteTypeBook(masach);
                 bookArrayList.remove(i);
-                Toast.makeText(BookActivity.this, ""+i, Toast.LENGTH_SHORT).show();
                 anhXa();
                 addRecyclerview();
 
@@ -346,7 +345,6 @@ public class BookActivity extends AppCompatActivity {
                         }
 
 
-
                         if (tacgia.equals("")){
                             edtTacGia.setError(getString(R.string.error_PassWord));
                             return;
@@ -367,17 +365,19 @@ public class BookActivity extends AppCompatActivity {
                             return;
                         }
 
-                           Book book=new Book();
-                           book.setMaSach(masach);
-                           book.setMaTheLoai(spinnerTenLoais.get(position));
-                           book.setTacGia(tacgia);
-                           book.setGiaBia(Float.parseFloat(giabia));
-                           book.setNXB(nxb);
-                           book.setSoLuong(Integer.parseInt(soluong));
-                           bookDao.updateTypeBook(book);
-                           anhXa();
-                           addRecyclerview();
-                           dialog.dismiss();
+
+                               Book book=new Book();
+                               book.setMaSach(masach);
+                               book.setMaTheLoai(spinnerTenLoais.get(position));
+                               book.setTacGia(tacgia);
+                               book.setGiaBia(Float.parseFloat(giabia));
+                               book.setNXB(nxb);
+                               book.setSoLuong(Integer.parseInt(soluong));
+                               bookDao.updateTypeBook(book);
+                               anhXa();
+                               addRecyclerview();
+                               dialog.dismiss();
+
 
                     }
                 });

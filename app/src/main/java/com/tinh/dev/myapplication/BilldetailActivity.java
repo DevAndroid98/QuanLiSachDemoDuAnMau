@@ -88,28 +88,6 @@ public class BilldetailActivity extends AppCompatActivity {
         linearLayoutManager=new LinearLayoutManager(this,LinearLayoutManager.VERTICAL,false);
     }
 
-    private void getDataBilldetails(){
-        billdetailAdapter=new BilldetailAdapter(billdetailsArrayList,bookArrayList,this,i);
-            Cursor cursor=helper.getData("SELECT * FROM HoaDonChiTiet");
-        billdetailsArrayList.clear();
-          if (cursor!=null&& cursor.moveToFirst()){
-              do {
-                  int maHDCT=cursor.getInt(cursor.getColumnIndex(B_COLUMN_ID));
-                  String mahoadon=cursor.getString(cursor.getColumnIndex(B_COLUMN_IDBILL));
-                  String masach=cursor.getString(cursor.getColumnIndex(B_COLUMN_IDBOOK));
-                  int soluongmua=cursor.getInt(cursor.getColumnIndex(B_COLUMN_POS));
-                  Billdetails billdetails=new Billdetails();
-                  billdetails.setId(maHDCT);
-                  billdetails.setIdbill(mahoadon);
-                  billdetails.setIdbook(masach);
-                  billdetails.setSoluong(soluongmua);
-                  billdetailsArrayList.add(billdetails);
-                  txtThanhTien.setVisibility(View.VISIBLE);
-              }while (cursor.moveToNext());
-               billdetailAdapter.notifyDataSetChanged();
-          }
-
-    }
 
     public void getDataBilldetails1(){
         billdetailAdapter=new BilldetailAdapter(getBilldetailsArrayList1,bookArrayList,this,i);

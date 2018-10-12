@@ -49,11 +49,13 @@
             android:parentActivityName=".HomeActivity"
             android:theme="@style/NguoiDung_Activity" />
         <activity
-            android:name=".BookSale"
+            android:parentActivityName=".HomeActivity"
+            android:name=".BookSaleActivity"
             android:label="Top 10 sách bán chạy"
             android:theme="@style/NguoiDung_Activity" />
         <activity
             android:name=".StatisticActivity"
+            android:parentActivityName=".HomeActivity"
             android:label="Thống kê"
             android:theme="@style/NguoiDung_Activity" />
         <activity

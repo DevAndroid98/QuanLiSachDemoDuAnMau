@@ -37,4 +37,11 @@ public class BilldetailsDAO implements Constant {
                Log.e("Tinhx",a+"");
                return a;
             }
+
+    public long delete1(String idBill){
+        SQLiteDatabase sqLiteDatabase=database.getWritableDatabase();
+        long a= sqLiteDatabase.delete(TABLE_HOADONCHITIET,B_COLUMN_IDBILL + "=?",new String[]{idBill});
+        Log.e("Tinhx",a+"");
+        return a;
+    }
 }
